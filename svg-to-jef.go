@@ -54,7 +54,12 @@ func convertSVGToJEF(svg SVG) []Point {
 				x = parseCoord(coords[0])
 				y = parseCoord(coords[1])
 				points = append(points, Point{X: x, Y: y})
-				// Ajoutez plus de cas pour les autres commandes SVG
+			case 'm', 'l':
+				coords := strings.Split(cmd[1:], ",")
+				x += parseCoord(coords[0])
+				y += parseCoord(coords[1])
+				points = append(points, Point{X: x, Y: y})
+			default:
 			}
 		}
 	}

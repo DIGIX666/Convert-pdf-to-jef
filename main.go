@@ -16,7 +16,7 @@ func main() {
 	points := convertSVGToJEF(svg)
 
 	// Write JEF
-	err = writeJEF("design.jef", points)
+	err = writeJEF("design.JEF", points)
 	if err != nil {
 		fmt.Println("Error writing JEF:", err)
 		return
